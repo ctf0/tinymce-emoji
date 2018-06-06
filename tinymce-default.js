@@ -36,7 +36,7 @@ function emoji(editor) {
             btn = e
             panelState = true
 
-            if ($('.ep-categories').length > 0) {
+            if (Array.from(document.querySelectorAll('.ep-categories')).length > 0) {
                 return
             }
 
@@ -53,7 +53,7 @@ function emoji(editor) {
 
     // disable resize for emoji
     editor.on('MouseDown', (e) => {
-        if ($(e.target).hasClass('ep-e-20')) {
+        if (e.target.classList.contains('ep-e-20')) {
             editor.settings.object_resizing = false
         } else {
             editor.settings.object_resizing = true
